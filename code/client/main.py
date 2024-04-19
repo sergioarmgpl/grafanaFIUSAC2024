@@ -11,7 +11,8 @@ r = redis.StrictRedis(host=rhost,\
         decode_responses=True)
 
 while True:
-    d = random.randint(0,9)
-    r.set("data",d)
-    print({"data":d},file=sys.stderr)
-    sleep(0.5)
+    team = random.randint(1,2)
+    r.hincrby("teams","team"+str(team),1)
+    r.incr("total",1)
+    print({"team"+str(team):1},file=sys.stderr)
+    sleep(0.3)

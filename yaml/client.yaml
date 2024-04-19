@@ -19,7 +19,7 @@ spec:
         app: client
     spec:
       containers:
-      - image: sergioarmgpl/client
+      - image: sergioarmgpl/client6
         name: client
         imagePullPolicy: Always
         env:
